@@ -1,0 +1,304 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B5CDB0761EBE55D60050C8D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDB0751EBE55D60050C8D6 /* AppDelegate.swift */; };
+		B5CDB0781EBE55D60050C8D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDB0771EBE55D60050C8D6 /* ViewController.swift */; };
+		B5CDB07B1EBE55D60050C8D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5CDB0791EBE55D60050C8D6 /* Main.storyboard */; };
+		B5CDB07D1EBE55D60050C8D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5CDB07C1EBE55D60050C8D6 /* Assets.xcassets */; };
+		B5CDB0801EBE55D60050C8D6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5CDB07E1EBE55D60050C8D6 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		B5CDB0721EBE55D60050C8D6 /* Metro Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Metro Navigation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5CDB0751EBE55D60050C8D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B5CDB0771EBE55D60050C8D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B5CDB07A1EBE55D60050C8D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5CDB07C1EBE55D60050C8D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5CDB07F1EBE55D60050C8D6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B5CDB0811EBE55D60050C8D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B5CDB06F1EBE55D60050C8D6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B5CDB0691EBE55D60050C8D6 = {
+			isa = PBXGroup;
+			children = (
+				B5CDB0741EBE55D60050C8D6 /* Metro Navigation */,
+				B5CDB0731EBE55D60050C8D6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B5CDB0731EBE55D60050C8D6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDB0721EBE55D60050C8D6 /* Metro Navigation.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B5CDB0741EBE55D60050C8D6 /* Metro Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDB0751EBE55D60050C8D6 /* AppDelegate.swift */,
+				B5CDB0771EBE55D60050C8D6 /* ViewController.swift */,
+				B5CDB0791EBE55D60050C8D6 /* Main.storyboard */,
+				B5CDB07C1EBE55D60050C8D6 /* Assets.xcassets */,
+				B5CDB07E1EBE55D60050C8D6 /* LaunchScreen.storyboard */,
+				B5CDB0811EBE55D60050C8D6 /* Info.plist */,
+			);
+			path = "Metro Navigation";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B5CDB0711EBE55D60050C8D6 /* Metro Navigation */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5CDB0841EBE55D60050C8D6 /* Build configuration list for PBXNativeTarget "Metro Navigation" */;
+			buildPhases = (
+				B5CDB06E1EBE55D60050C8D6 /* Sources */,
+				B5CDB06F1EBE55D60050C8D6 /* Frameworks */,
+				B5CDB0701EBE55D60050C8D6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Metro Navigation";
+			productName = "Metro Navigation";
+			productReference = B5CDB0721EBE55D60050C8D6 /* Metro Navigation.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B5CDB06A1EBE55D60050C8D6 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Konstantin Konstantinov";
+				TargetAttributes = {
+					B5CDB0711EBE55D60050C8D6 = {
+						CreatedOnToolsVersion = 8.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B5CDB06D1EBE55D60050C8D6 /* Build configuration list for PBXProject "Metro Navigation" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B5CDB0691EBE55D60050C8D6;
+			productRefGroup = B5CDB0731EBE55D60050C8D6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B5CDB0711EBE55D60050C8D6 /* Metro Navigation */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B5CDB0701EBE55D60050C8D6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5CDB0801EBE55D60050C8D6 /* LaunchScreen.storyboard in Resources */,
+				B5CDB07D1EBE55D60050C8D6 /* Assets.xcassets in Resources */,
+				B5CDB07B1EBE55D60050C8D6 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B5CDB06E1EBE55D60050C8D6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5CDB0781EBE55D60050C8D6 /* ViewController.swift in Sources */,
+				B5CDB0761EBE55D60050C8D6 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		B5CDB0791EBE55D60050C8D6 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5CDB07A1EBE55D60050C8D6 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B5CDB07E1EBE55D60050C8D6 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5CDB07F1EBE55D60050C8D6 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B5CDB0821EBE55D60050C8D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B5CDB0831EBE55D60050C8D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B5CDB0851EBE55D60050C8D6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Metro Navigation/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "KKV.Metro-Navigation";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B5CDB0861EBE55D60050C8D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Metro Navigation/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "KKV.Metro-Navigation";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B5CDB06D1EBE55D60050C8D6 /* Build configuration list for PBXProject "Metro Navigation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5CDB0821EBE55D60050C8D6 /* Debug */,
+				B5CDB0831EBE55D60050C8D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B5CDB0841EBE55D60050C8D6 /* Build configuration list for PBXNativeTarget "Metro Navigation" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5CDB0851EBE55D60050C8D6 /* Debug */,
+				B5CDB0861EBE55D60050C8D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B5CDB06A1EBE55D60050C8D6 /* Project object */;
+}
