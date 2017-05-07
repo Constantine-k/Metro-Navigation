@@ -10,13 +10,31 @@ import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
     
-    var pickerData = ["Akademgorodok", "Kreschatik", "Arsenalnaya"]
+    let stationsData = StationsData()
     
-    @IBOutlet weak var fromStationTextField: UITextField!
-    @IBOutlet weak var toStationTextField: UITextField!
     
-    var fromStationPicker = UIPickerView()
-    var toStationPicker = UIPickerView()
+    
+    
+    
+    
+    
+    
+    
+    private var pickerData = ["Akademgorodok", "Kreschatik", "Arsenalnaya"]
+    
+    @IBOutlet weak var fromStationTextField: UITextField! {
+        didSet {
+            updateUI()
+        }
+    }
+    @IBOutlet weak var toStationTextField: UITextField! {
+        didSet {
+            updateUI()
+        }
+    }
+    
+    private let fromStationPicker = UIPickerView()
+    private let toStationPicker = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +46,8 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         toStationPicker.delegate = self
         toStationPicker.tag = 2
         toStationTextField.inputView = toStationPicker
+        
+        updateUI()
     }
     
     override func didReceiveMemoryWarning() {
@@ -40,22 +60,27 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         return 1
     }
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData.count
+        return stationsData.namesList().count
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 1 {
-            fromStationTextField.text = pickerData[row]
+            fromStationTextField.text = stationsData.namesList()[row]
         } else if pickerView.tag == 2 {
-            toStationTextField.text = pickerData[row]
+            toStationTextField.text = stationsData.namesList()[row]
         }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
+        return stationsData.namesList()[row]
     }
     
     // Hide picker on touch
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+    
+    /// Update Metro Map View
+    private func updateUI() {
+        
     }
     
 }

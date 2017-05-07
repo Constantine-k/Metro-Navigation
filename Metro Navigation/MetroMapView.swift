@@ -29,14 +29,21 @@ class MetroMapView: UIView {
         return path
     }
     
+    
+    var viewController = ViewController()
+    
+    
+    
     override func draw(_ rect: CGRect) {
+        /*private func metroLinePath() -> UIBezierPath {
+            for index in viewController.stationsData.stationsRed {
+                
+            }
+        }*/
+        
+        
         stationPath().stroke()
         text.draw(at: stationPoint)
     }
-    
-    // Station point shape
-    /*struct stationPoint {
-     static let
-     }*/
 
 }
