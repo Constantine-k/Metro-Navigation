@@ -12,24 +12,17 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     let stationsData = StationsData()
     
+    @IBOutlet weak var metroMapView: MetroMapView!
     
-    
-    
-    
-    
-    
-    
-    
-    private var pickerData = ["Akademgorodok", "Kreschatik", "Arsenalnaya"]
-    
+    // From and To Station text fields
     @IBOutlet weak var fromStationTextField: UITextField! {
         didSet {
-            updateUI()
+            //updateUI()
         }
     }
     @IBOutlet weak var toStationTextField: UITextField! {
         didSet {
-            updateUI()
+            //updateUI()
         }
     }
     
@@ -65,8 +58,10 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 1 {
             fromStationTextField.text = stationsData.namesList()[row]
+            updateUI()
         } else if pickerView.tag == 2 {
             toStationTextField.text = stationsData.namesList()[row]
+            updateUI()
         }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -80,7 +75,7 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     /// Update Metro Map View
     private func updateUI() {
-        
+        //metroMapView?.scale *= 1.5
     }
     
 }

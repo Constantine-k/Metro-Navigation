@@ -52,6 +52,7 @@
                     </view>
                     <connections>
                         <outlet property="fromStationTextField" destination="CoL-4Y-WNz" id="836-88-lxz"/>
+                        <outlet property="metroMapView" destination="i5U-4A-77S" id="j4q-fc-Tin"/>
                         <outlet property="toStationTextField" destination="HNZ-Kg-qjH" id="jYc-T5-27z"/>
                     </connections>
                 </viewController>

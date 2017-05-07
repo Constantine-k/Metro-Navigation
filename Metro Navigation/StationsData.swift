@@ -11,17 +11,17 @@ import Foundation
 struct StationsData {
     // Stations list arrays
     let stationsRed: [(name: String, xOffset: Double, yOffset: Double)] = [
-        ("Akademmistechko", 10.0, 0.0),
-        ("Zhytomyrska", 10.0, 0.0),
-        ("Sviatoshyn", 10.0, 0.0)]
+        ("Akademmistechko", 0.0, 0.0),
+        ("Zhytomyrska", 20.0, 20.0),
+        ("Sviatoshyn", 20.0, 20.0)]
     let stationsBlue: [(name: String, xOffset: Double, yOffset: Double)] = [
-        ("Heroiv Dnipra", 10.0, 0.0),
-        ("Minska", 10.0, 0.0),
-        ("Obolon", 10.0, 0.0)]
+        ("Heroiv Dnipra", 0.0, 0.0),
+        ("Minska", 20.0, 0.0),
+        ("Obolon", 20.0, 0.0)]
     let stationsGreen: [(name: String, xOffset: Double, yOffset: Double)] = [
-        ("Syrets", 10.0, 0.0),
-        ("Dorohozhychi", 10.0, 0.0),
-        ("Lukianivska", 10.0, 0.0)]
+        ("Syrets", 0.0, 0.0),
+        ("Dorohozhychi", 20.0, 0.0),
+        ("Lukianivska", 20.0, 0.0)]
     
     /// Return list of all station names in alpabetical order
     func namesList() -> [String] {
