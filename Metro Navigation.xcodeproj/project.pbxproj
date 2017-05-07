@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5AC1D091EBF6A5B003E4F61 /* MetroMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5AC1D081EBF6A5B003E4F61 /* MetroMapView.swift */; };
 		B5CDB0761EBE55D60050C8D6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDB0751EBE55D60050C8D6 /* AppDelegate.swift */; };
 		B5CDB0781EBE55D60050C8D6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CDB0771EBE55D60050C8D6 /* ViewController.swift */; };
 		B5CDB07B1EBE55D60050C8D6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5CDB0791EBE55D60050C8D6 /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B5AC1D081EBF6A5B003E4F61 /* MetroMapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MetroMapView.swift; sourceTree = "<group>"; };
 		B5CDB0721EBE55D60050C8D6 /* Metro Navigation.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Metro Navigation.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5CDB0751EBE55D60050C8D6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5CDB0771EBE55D60050C8D6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +37,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5AC1D0A1EBF6AB0003E4F61 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B5AC1D081EBF6A5B003E4F61 /* MetroMapView.swift */,
+				B5CDB0791EBE55D60050C8D6 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		B5AC1D0B1EBF6AB6003E4F61 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B5CDB0771EBE55D60050C8D6 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		B5CDB0691EBE55D60050C8D6 = {
 			isa = PBXGroup;
 			children = (
@@ -54,8 +73,8 @@
 		B5CDB0741EBE55D60050C8D6 /* Metro Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				B5CDB0771EBE55D60050C8D6 /* ViewController.swift */,
-				B5CDB0791EBE55D60050C8D6 /* Main.storyboard */,
+				B5AC1D0B1EBF6AB6003E4F61 /* Controller */,
+				B5AC1D0A1EBF6AB0003E4F61 /* View */,
 				B5CDB0871EBE56A00050C8D6 /* Supporting Files */,
 			);
 			path = "Metro Navigation";
@@ -145,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5CDB0781EBE55D60050C8D6 /* ViewController.swift in Sources */,
+				B5AC1D091EBF6A5B003E4F61 /* MetroMapView.swift in Sources */,
 				B5CDB0761EBE55D60050C8D6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,6 +325,7 @@
 				B5CDB0861EBE55D60050C8D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
