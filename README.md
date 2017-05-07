@@ -1,2 +1,2 @@
-# mn-mp
-iOS application "Metro Navigation" for MacPaw Internship program.
+# Metro Navigation
+iOS app for MacPaw Internship program.
