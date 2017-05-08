@@ -72,33 +72,78 @@ struct StationsData {
         return allStations.map({$0.name}).sorted(by: <)
     }
     
+    struct stationTransitions {
+        static let redToBlue = "Khreshchatyk"
+        static let redToGreen = "Teatralna"
+        static let blueToRed = "Maidan Nezalezhnosti"
+        static let blueToGreen = "Ploshcha Lva Tolstoho"
+        static let greenToRed = "Zoloti Vorota"
+        static let greenToBlue = "Palats Sportu"
+    }
+    
     /// Return array with active stations
     func makeRoute(fromStation: String?, toStation: String?) -> StationsData {
-        if !(fromStation == nil && toStation == nil) {
+        if fromStation != nil && toStation != nil {
             
             var stationsDataWithRoute = StationsData()
             
-            if stationsDataWithRoute.stationsRed.contains(where: {$0.name == fromStation}) {
-                if stationsDataWithRoute.stationsRed.contains(where: {$0.name == toStation}) {
-                    var fromStationIndex = 0
-                    var toStationIndex = 0
-                    for (stationIndex, stationValue) in stationsDataWithRoute.stationsRed.enumerated() {
-                        if stationValue.name == fromStation {
-                            fromStationIndex = stationIndex
-                        } else if stationValue.name == toStation {
-                            toStationIndex = stationIndex
-                        }
+            /// Return array with marked active stations
+            func markAsActive(fromStationName: String, toStationName: String, onLine metroLine: [(name: String, xOffset: Double, yOffset: Double, active: Bool)]) -> [(name: String, xOffset: Double, yOffset: Double, active: Bool)] {
+                var fromStationIndex = 0
+                var toStationIndex = 0
+                for (stationIndex, stationValue) in metroLine.enumerated() {
+                    if stationValue.name == fromStationName {
+                        fromStationIndex = stationIndex
+                    } else if stationValue.name == toStationName {
+                        toStationIndex = stationIndex
                     }
-                    
-                    if fromStationIndex < toStationIndex {
-                        for index in fromStationIndex...toStationIndex {
-                            stationsDataWithRoute.stationsRed[index].active = true
-                        }
-                    } else if fromStationIndex > toStationIndex {
-                        for index in toStationIndex...fromStationIndex {
-                            stationsDataWithRoute.stationsRed[index].active = true
-                        }
+                }
+                
+                var metroLineCopy = metroLine
+                
+                if fromStationIndex < toStationIndex {
+                    for index in fromStationIndex...toStationIndex {
+                        metroLineCopy[index].active = true
                     }
+                } else if fromStationIndex > toStationIndex {
+                    for index in toStationIndex...fromStationIndex {
+                        metroLineCopy[index].active = true
+                    }
+                }
+                
+                return metroLineCopy
+            }
+            
+            
+            if stationsDataWithRoute.stationsRed.contains(where: {$0.name == fromStation!}) {
+                if stationsDataWithRoute.stationsRed.contains(where: {$0.name == toStation!}) {
+                    stationsDataWithRoute.stationsRed = markAsActive(fromStationName: fromStation!, toStationName: toStation!, onLine: stationsDataWithRoute.stationsRed)
+                } else if stationsDataWithRoute.stationsBlue.contains(where: {$0.name == toStation!}) {
+                    stationsDataWithRoute.stationsRed = markAsActive(fromStationName: fromStation!, toStationName: stationTransitions.redToBlue, onLine: stationsDataWithRoute.stationsRed)
+                    stationsDataWithRoute.stationsBlue = markAsActive(fromStationName: stationTransitions.blueToRed, toStationName: toStation!, onLine: stationsDataWithRoute.stationsBlue)
+                } else if stationsDataWithRoute.stationsGreen.contains(where: {$0.name == toStation!}) {
+                    stationsDataWithRoute.stationsRed = markAsActive(fromStationName: fromStation!, toStationName: stationTransitions.redToGreen, onLine: stationsDataWithRoute.stationsRed)
+                    stationsDataWithRoute.stationsGreen = markAsActive(fromStationName: stationTransitions.greenToRed, toStationName: toStation!, onLine: stationsDataWithRoute.stationsGreen)
+                }
+            } else if stationsDataWithRoute.stationsBlue.contains(where: {$0.name == fromStation!}) {
+                if stationsDataWithRoute.stationsBlue.contains(where: {$0.name == toStation!}) {
+                    stationsDataWithRoute.stationsBlue = markAsActive(fromStationName: fromStation!, toStationName: toStation!, onLine: stationsDataWithRoute.stationsBlue)
+                } else if stationsDataWithRoute.stationsRed.contains(where: {$0.name == toStation!}) {
+                    stationsDataWithRoute.stationsBlue = markAsActive(fromStationName: fromStation!, toStationName: stationTransitions.blueToRed, onLine: stationsDataWithRoute.stationsBlue)
+                    stationsDataWithRoute.stationsRed = markAsActive(fromStationName: stationTransitions.redToBlue, toStationName: toStation!, onLine: stationsDataWithRoute.stationsRed)
+                } else if stationsDataWithRoute.stationsGreen.contains(where: {$0.name == toStation!}) {
+                    stationsDataWithRoute.stationsBlue = markAsActive(fromStationName: fromStation!, toStationName: stationTransitions.blueToGreen, onLine: stationsDataWithRoute.stationsBlue)
+                    stationsDataWithRoute.stationsGreen = markAsActive(fromStationName: stationTransitions.greenToBlue, toStationName: toStation!, onLine: stationsDataWithRoute.stationsGreen)
+                }
+            } else if stationsDataWithRoute.stationsGreen.contains(where: {$0.name == fromStation!}) {
+                if stationsDataWithRoute.stationsGreen.contains(where: {$0.name == toStation!}) {
+                    stationsDataWithRoute.stationsGreen = markAsActive(fromStationName: fromStation!, toStationName: toStation!, onLine: stationsDataWithRoute.stationsGreen)
+                } else if stationsDataWithRoute.stationsRed.contains(where: {$0.name == toStation!}) {
+                    stationsDataWithRoute.stationsGreen = markAsActive(fromStationName: fromStation!, toStationName: stationTransitions.greenToRed, onLine: stationsDataWithRoute.stationsGreen)
+                    stationsDataWithRoute.stationsRed = markAsActive(fromStationName: stationTransitions.redToGreen, toStationName: toStation!, onLine: stationsDataWithRoute.stationsRed)
+                } else if stationsDataWithRoute.stationsBlue.contains(where: {$0.name == toStation!}) {
+                    stationsDataWithRoute.stationsGreen = markAsActive(fromStationName: fromStation!, toStationName: stationTransitions.greenToBlue, onLine: stationsDataWithRoute.stationsGreen)
+                    stationsDataWithRoute.stationsBlue = markAsActive(fromStationName: stationTransitions.blueToGreen, toStationName: toStation!, onLine: stationsDataWithRoute.stationsBlue)
                 }
             }
             
