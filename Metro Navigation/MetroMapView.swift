@@ -13,9 +13,9 @@ class MetroMapView: UIView {
     
     /// Position of first station on the lines
     private struct LineStartingPoint {
-        static let red = CGPoint(x: 80.0, y: 80.0)
-        static let blue = CGPoint(x: 20.0, y: 20.0)
-        static let green = CGPoint(x: 20.0, y: 20.0)
+        static let red = CGPoint(x: 55.0, y: 213.0)
+        static let blue = CGPoint(x: 204.0, y: 184.0)
+        static let green = CGPoint(x: 172.0, y: 221.0)
     }
     
     /// Text position offset
@@ -24,7 +24,7 @@ class MetroMapView: UIView {
     /// Scale of whole Metro Map View
     var scale: CGFloat = 1 { didSet { setNeedsDisplay() } }
     
-    private let stationPointRadius: CGFloat = 5.0
+    private let stationPointRadius: CGFloat = 3.5
     private let stationPointLineWidth: CGFloat = 3.0
     
     
@@ -43,6 +43,12 @@ class MetroMapView: UIView {
     }
     
     
+    /*/// Draw line of metro stations
+    private func drawLineOfStations(usingStartingPoint startingPoint: CGPoint, withStations stations: [String, Double, Double]) {
+        
+    }*/
+    
+    
     
     /*private func metroLinePath() -> UIBezierPath {
         for index in viewController.stationsData.stationsRed {
@@ -55,18 +61,30 @@ class MetroMapView: UIView {
     override func draw(_ rect: CGRect) {
         var drawingStationPoint = LineStartingPoint.red
         for station in viewController.stationsData.stationsRed {
+            //if () {
             UIColor.red.set()
             
+            let oldDrawingStationPoint = drawingStationPoint
+            
             drawingStationPoint = CGPoint.init(x: drawingStationPoint.x + CGFloat(station.xOffset), y: drawingStationPoint.y + CGFloat(station.yOffset))
-            stationPath(atPosition: drawingStationPoint).stroke()
+            stationPath(atPosition: drawingStationPoint).fill()
+            
+            if station.xOffset != 550.0 && station.yOffset != 550.0 {
+                let stationLine = UIBezierPath()
+                stationLine.move(to: oldDrawingStationPoint)
+                stationLine.addLine(to: drawingStationPoint)
+                stationLine.lineWidth = stationPointLineWidth * scale
+                stationLine.stroke()
+            }
             
             //let drawingText = NSAttributedString(string: station.name)
             let drawingTextOffset = CGPoint.init(x: drawingStationPoint.x + textOffset.x, y: drawingStationPoint.y + textOffset.y)
-            let drawingText = NSAttributedString(string: station.name, attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 8)!])
+            let drawingText = NSAttributedString(string: station.name, attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 7)!])
             drawingText.draw(at: drawingTextOffset)
         }
-        //stationPath().stroke()
-        //text.draw(at: stationPoint)
+        
+
+        
     }
 
 }
