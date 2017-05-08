@@ -83,7 +83,7 @@ struct StationsData {
     
     /// Return array with active stations
     func makeRoute(fromStation: String?, toStation: String?) -> StationsData {
-        if fromStation != nil && toStation != nil {
+        if fromStation != nil && toStation != nil && fromStation != toStation {
             
             var stationsDataWithRoute = StationsData()
             
@@ -114,6 +114,7 @@ struct StationsData {
                 return metroLineCopy
             }
             
+            //let fromStationLine
             
             if stationsDataWithRoute.stationsRed.contains(where: {$0.name == fromStation!}) {
                 if stationsDataWithRoute.stationsRed.contains(where: {$0.name == toStation!}) {

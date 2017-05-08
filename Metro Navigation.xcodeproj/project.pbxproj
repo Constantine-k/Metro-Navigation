@@ -134,6 +134,7 @@
 				TargetAttributes = {
 					B5CDB0711EBE55D60050C8D6 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = YV3R4G9QG6;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -298,6 +299,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YV3R4G9QG6;
 				INFOPLIST_FILE = "Metro Navigation/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KKV.Metro-Navigation";
@@ -310,6 +312,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YV3R4G9QG6;
 				INFOPLIST_FILE = "Metro Navigation/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "KKV.Metro-Navigation";
