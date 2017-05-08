@@ -9,8 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    
-    let stationsData = StationsData()
+    // !! let
+    var stationsData = StationsData()
     
     @IBOutlet weak var metroMapView: MetroMapView!
     
@@ -58,9 +58,11 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         if pickerView.tag == 1 {
             fromStationTextField.text = stationsData.namesList()[row]
+            metroMapView.fromStationName = stationsData.namesList()[row]
             updateUI()
         } else if pickerView.tag == 2 {
             toStationTextField.text = stationsData.namesList()[row]
+            metroMapView.toStationName = stationsData.namesList()[row]
             updateUI()
         }
     }
