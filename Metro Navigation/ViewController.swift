@@ -9,22 +9,14 @@
 import UIKit
 
 class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
-    // !! let
-    var stationsData = StationsData()
+    
+    let stationsData = StationsData()
     
     @IBOutlet weak var metroMapView: MetroMapView!
     
     // From and To Station text fields
-    @IBOutlet weak var fromStationTextField: UITextField! {
-        didSet {
-            //updateUI()
-        }
-    }
-    @IBOutlet weak var toStationTextField: UITextField! {
-        didSet {
-            //updateUI()
-        }
-    }
+    @IBOutlet weak var fromStationTextField: UITextField!
+    @IBOutlet weak var toStationTextField: UITextField!
     
     private let fromStationPicker = UIPickerView()
     private let toStationPicker = UIPickerView()
@@ -39,8 +31,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         toStationPicker.delegate = self
         toStationPicker.tag = 2
         toStationTextField.inputView = toStationPicker
-        
-        updateUI()
     }
     
     override func didReceiveMemoryWarning() {
@@ -59,11 +49,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
         if pickerView.tag == 1 {
             fromStationTextField.text = stationsData.namesList()[row]
             metroMapView.fromStationName = stationsData.namesList()[row]
-            updateUI()
         } else if pickerView.tag == 2 {
             toStationTextField.text = stationsData.namesList()[row]
             metroMapView.toStationName = stationsData.namesList()[row]
-            updateUI()
         }
     }
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -73,11 +61,6 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     // Hide picker on touch
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
-    }
-    
-    /// Update Metro Map View
-    private func updateUI() {
-        //metroMapView?.scale *= 1.5
     }
     
 }

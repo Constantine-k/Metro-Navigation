@@ -32,9 +32,6 @@ class MetroMapView: UIView {
     private let greenColor = UIColor.init(red: 3.0/255.0, green: 153.0/255.0, blue: 84.0/255.0, alpha: 1.0)
     
     
-    //let text = NSAttributedString(string: "Akademmistechko")
-    //let stationPoint = CGPoint.init(x: 100.0, y: 100.0)
-    
     var fromStationName: String? { didSet { setNeedsDisplay() } }
     var toStationName: String? { didSet { setNeedsDisplay() } }
     
@@ -43,7 +40,6 @@ class MetroMapView: UIView {
     /// Create station Bezier path
     private func stationPath(atPosition positionPoint: CGPoint) -> UIBezierPath {
         let path = UIBezierPath(arcCenter: positionPoint, radius: stationPointRadius * scale, startAngle: 0, endAngle: 2 * CGFloat.pi, clockwise: true)
-        //UIColor.red.set()
         path.lineWidth = stationPointLineWidth * scale
         
         return path
@@ -52,9 +48,11 @@ class MetroMapView: UIView {
     
     /// Draw line of metro stations
     func drawLineOfStations(usingStartingPoint startingPoint: CGPoint, withStations stations: [(name: String, xOffset: Double, yOffset: Double, active: Bool)], andColor color: UIColor) {
+        var isFirstStationInRoute = true
+        
         var drawingStationPoint = startingPoint
-        for station in stations {
-            if (station.active == true) {
+        for (stationIndex, station) in stations.enumerated() {
+            if (station.active) {
                 UIColor.black.set()
             } else {
                 color.set()
@@ -65,14 +63,18 @@ class MetroMapView: UIView {
             drawingStationPoint = CGPoint.init(x: drawingStationPoint.x + CGFloat(station.xOffset), y: drawingStationPoint.y + CGFloat(station.yOffset))
             stationPath(atPosition: drawingStationPoint).fill()
             
-            
-            if !(station.xOffset == 0.0 && station.yOffset == 0.0) {
-                let stationLine = UIBezierPath()
-                stationLine.move(to: oldDrawingStationPoint)
-                stationLine.addLine(to: drawingStationPoint)
-                stationLine.lineWidth = stationPointLineWidth * scale
-                stationLine.stroke()
+            // Draw lines between stations
+            if isFirstStationInRoute && station.active {
+                if stationIndex != 0 {
+                    color.set()
+                }
+                isFirstStationInRoute = false
             }
+            let stationLine = UIBezierPath()
+            stationLine.move(to: oldDrawingStationPoint)
+            stationLine.addLine(to: drawingStationPoint)
+            stationLine.lineWidth = stationPointLineWidth * scale
+            stationLine.stroke()
             
             let drawingTextOffset = CGPoint.init(x: drawingStationPoint.x + textOffset.x, y: drawingStationPoint.y + textOffset.y)
             let drawingText = NSAttributedString(string: station.name, attributes: [NSFontAttributeName: UIFont(name: "HelveticaNeue-Light", size: 7)!])
@@ -81,20 +83,9 @@ class MetroMapView: UIView {
     }
     
     
-    //LineStartingPoint.red
-    /*private func metroLinePath() -> UIBezierPath {
-        for index in viewController.stationsData.stationsRed {
-            
-        }
-    }*/
-    
-    
-    
     override func draw(_ rect: CGRect) {
-        //drawLineOfStations(usingStartingPoint: LineStartingPoint.red, withStations: viewController.stationsData.stationsRed, andColor: redColor)
         drawLineOfStations(usingStartingPoint: LineStartingPoint.red, withStations: viewController.stationsData.makeRoute(fromStation: fromStationName, toStation: toStationName).stationsRed, andColor: redColor)
         drawLineOfStations(usingStartingPoint: LineStartingPoint.blue, withStations: viewController.stationsData.makeRoute(fromStation: fromStationName, toStation: toStationName).stationsBlue, andColor: blueColor)
         drawLineOfStations(usingStartingPoint: LineStartingPoint.green, withStations: viewController.stationsData.makeRoute(fromStation: fromStationName, toStation: toStationName).stationsGreen, andColor: greenColor)
     }
-
 }
