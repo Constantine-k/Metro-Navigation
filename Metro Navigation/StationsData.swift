@@ -66,7 +66,7 @@ struct StationsData {
         ("Boryspilska", 9.0, 9.0, false),
         ("Chervony Khutir", 9.0, 9.0, false)]
     
-    /// Return list of all station names in alpabetical order
+    /// Return list of all station names in alphabetical order
     func namesList() -> [String] {
         let allStations = stationsRed + stationsBlue + stationsGreen
         return allStations.map({$0.name}).sorted(by: <)
@@ -114,7 +114,7 @@ struct StationsData {
                 return metroLineCopy
             }
             
-            //let fromStationLine
+            
             
             if stationsDataWithRoute.stationsRed.contains(where: {$0.name == fromStation!}) {
                 if stationsDataWithRoute.stationsRed.contains(where: {$0.name == toStation!}) {
